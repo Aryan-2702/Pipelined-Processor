@@ -1,1 +1,6 @@
 # Pipelined-Processor
+
+
+Abstract
+
+This work presents a practical framework for enabling OpenGL-based graphics rendering and shader execution on the Vortex GPGPU 2.0 architecture—an open-source, FPGA-accelerated general-purpose GPU developed at Georgia Tech. Although originally designed for OpenCL-based parallel computing, Vortex lacks native OpenGL driver support. To bridge this gap, we propose a hybrid rendering pipeline where OpenGL handles geometry processing and display on the host system, while Vortex offloads fragment and compute shader operations via OpenCL. The integration is achieved using the Mesa graphics stack for OpenGL context management and POCL (Portable Computing Language) as the OpenCL runtime targeting Vortex. We demonstrate two approaches for data exchange between OpenGL and Vortex: (1) OpenCL–OpenGL interoperation via cl_khr_gl_sharing (when supported), and (2) a manual data transfer pipeline for broader compatibility. The framework is validated through a working prototype where Vortex executes a pixel-wise image processing kernel, with the results displayed using OpenGL in real time. This work illustrates the viability of shader-like compute on custom FPGA-based GPUs and establishes a path for lightweight graphics acceleration using hybrid GPGPU architectures without full OpenGL driver stacks.
